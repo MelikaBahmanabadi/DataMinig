@@ -1,0 +1,29 @@
+###Thanks to https://github.com/RezaKakooee
+## 1# Virtual Env
+conda create --name mateng python=3.6
+
+## 2#  activate venv
+conda activate mateng
+
+## 3#  Install Jupyter Notebook
+conda install -c anaconda jupyter
+
+## 5-1# Get matlab root
+Lunch matlab and run this command < matlabroot >
+## Your matlabroot should be like this 'C:\Program Files\MATLAB\R2020a'
+
+## 5-2# Run Anaconda Prompt as Administrator and change the directory
+## Note: Replace matlabroot below with your matlabroot
+cd "matlabroot\extern\engines\python"
+## Should be like this: cd "C:\Program Files\MATLAB\R2020a\extern\engines\python"
+
+## 5-3# Install matlab_engin
+python setup.py install
+
+## 6# Open a jyputer notebook in mateng virtual environment and run the follwing Python example as a test:
+import matlab.engine
+eng = matlab.engine.start_matlab()
+x = 4.0
+eng.workspace['y'] = x
+a = eng.eval('sqrt(y)')
+print(a)
