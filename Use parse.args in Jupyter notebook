@@ -1,0 +1,4 @@
+One solution is to parse an empty list of arguments:
+args = parser.parse_args([])
+Another is to use parse_known_args:
+args, _ = parser.parse_known_args()
