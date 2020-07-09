@@ -1,0 +1,2 @@
+no_unicode_list = [re.sub('[^\w\s]', '', s) for s in clean_list]
+no_unicode_list
