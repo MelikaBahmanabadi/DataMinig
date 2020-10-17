@@ -1,0 +1,11 @@
+delimiter = ','
+ids = {}
+with open('all_data.csv', 'r') as ifile:
+    for line in ifile:
+        my_id = line.strip().split(delimiter)[8] #column number
+        # If id does not exist in a dict = set count to 0
+        if my_id not in ids:
+            ids[my_id] = 0
+        # Increment the count
+        ids[my_id] += 1
+print(ids)
