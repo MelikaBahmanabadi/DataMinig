@@ -1,0 +1,5 @@
+# date sort
+dates = ["2018/11/21 11:05:45", "2009/11/14 00:25:10", "2009/11/14 00:25:11"]
+Sort the list in ascending order of dates
+dates.sort(key=lambda date: datetime.strptime(date, '%Y/%m/%d %H:%M:%S'))
+print(dates)
